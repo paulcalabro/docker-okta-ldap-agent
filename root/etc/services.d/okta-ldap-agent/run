@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+AgentInstallPrefix=/opt/Okta/OktaLDAPAgent
+. $AgentInstallPrefix/scripts/defs.sh
+
+exec \
+	s6-setuidgid abc $JAVA -Dlogback.configurationFile="$AgentInstallPrefix/conf/logback.xml" -Dagent_home="$AgentInstallPrefix" -jar $AgentJar -mode normal -configFilePath $ConfigFile
