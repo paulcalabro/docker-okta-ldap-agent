@@ -15,7 +15,7 @@ configure_instructions()
     echo "$AgentInstallPrefix/scripts/configure_agent.sh"
     echo
     echo "Docker command example:"
-    echo "docker run -it --rm -v \$(pwd)/conf:$AgentInstallPrefix/conf nightah/okta-ldap-agent $AgentInstallPrefix/scripts/configure_agent.sh"
+    echo "docker run -it --rm --entrypoint $AgentInstallPrefix/scripts/configure_agent.sh -v \$(pwd)/conf:$AgentInstallPrefix/conf nightah/okta-ldap-agent"
     echo
 }
 
